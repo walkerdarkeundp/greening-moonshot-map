@@ -10,8 +10,6 @@
         <p><strong>Stakeholders:</strong> {{ project.stakeholders || 'No stakeholders available' }}</p>
         <p><strong>Budget:</strong> {{ project.budget || 'No budget available' }}</p>
         <p><strong>Completion Date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
-        <p><strong>Focal Point (Korea):</strong> {{ project.focal_point_korea || 'No focal point in Korea available' }}</p>
-        <p><strong>Focal Point (Country):</strong> {{ project.focal_point_country || 'No focal point in country available' }}</p>
         <p><strong>Description:</strong> {{ project.description || 'No description available' }}</p>
       </div>
     </div>
