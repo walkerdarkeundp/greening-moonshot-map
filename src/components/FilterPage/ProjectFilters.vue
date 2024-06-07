@@ -1,7 +1,7 @@
 <template>
   <v-expansion-panels accordion multiple>
     <!-- Continents Filter -->
-    <v-expansion-panel>
+    <v-expansion-panel hide-actions>
       <v-select
         v-model="selectedContinent"
         :items="continentList"
@@ -12,8 +12,9 @@
         @change="keepDropdownOpen"
       ></v-select>
     </v-expansion-panel>
+
     <!-- Countries Filter -->
-    <v-expansion-panel>
+    <v-expansion-panel hide-actions>
       <v-select
         v-model="selectedCountry"
         :items="filteredCountryList"
@@ -24,8 +25,9 @@
         @change="keepDropdownOpen"
       ></v-select>
     </v-expansion-panel>
+
     <!-- Topic Filter -->
-    <v-expansion-panel>
+    <v-expansion-panel hide-actions>
       <v-select
         v-model="selectedTopic"
         :items="topicList"
@@ -36,8 +38,9 @@
         @change="keepDropdownOpen"
       ></v-select>
     </v-expansion-panel>
+
     <!-- Year Filter -->
-    <v-expansion-panel>
+    <v-expansion-panel hide-actions>
       <v-select
         v-model="selectedYear"
         :items="yearList"
@@ -47,18 +50,6 @@
         @blur="isAnyDropdownOpen = false"
         @change="keepDropdownOpen"
       ></v-select>
-    </v-expansion-panel>
-    <!-- Budget Filter -->
-    <v-expansion-panel>
-      <v-range-slider
-        :disabled="isAnyDropdownOpen"
-        v-model="selectedBudgetRange"
-        :max="maxBudget"
-        :min="0"
-        step="5000"
-        label="Budget"
-        thumb-label="always"
-      ></v-range-slider>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
@@ -72,8 +63,6 @@ export default {
       selectedCountry: [],
       selectedTopic: [],
       selectedYear: [],
-      selectedBudgetRange: [0, 1000000],
-      maxBudget: 1000000,
       continentList: [],
       countryList: [],
       topicList: [],
@@ -90,9 +79,7 @@ export default {
   },
   methods: {
     keepDropdownOpen() {
-      // This method is intentionally left to maintain dropdown state; adjust as needed.
       this.isAnyDropdownOpen = true;
-      // Implement logic here if you need the dropdown to stay open after selection.
     },
     closeAllDropdowns() {
       this.isAnyDropdownOpen = false;
@@ -102,10 +89,6 @@ export default {
       this.countryList = [...new Set(this.projects.map(project => project.country))];
       this.topicList = [...new Set(this.projects.map(project => project.topic))];
       this.yearList = [...new Set(this.projects.map(project => project.completion_date))];
-    },
-    updateMaxBudget() {
-      this.maxBudget = Math.max(...this.projects.map(project => parseFloat(project.budget.replace(/[^0-9.]/g, ''))), 0);
-      this.selectedBudgetRange = [0, this.maxBudget];
     },
     filterProjects() {
       this.$emit('filter');
@@ -117,7 +100,6 @@ export default {
       handler(newVal) {
         if (newVal && newVal.length) {
           this.updateFilterLists();
-          this.updateMaxBudget();
         }
       }
     },
@@ -133,16 +115,13 @@ export default {
     selectedYear() {
       this.filterProjects();
     },
-    selectedBudgetRange() {
-      this.filterProjects();
-    },
   },
   mounted() {
     this.updateFilterLists();
-    this.updateMaxBudget();
   },
 };
 </script>
+
 
 <style scoped>
 .filter {
