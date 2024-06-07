@@ -5,7 +5,7 @@
       <div class="map-container">
         <FundingMap
           :projects="filteredProjects"
-          @select-country="selectCountry"
+          :selectedCountryCodes="selectedCountryCodes"
           :reset-selection="resetMapSelection"
         />
       </div>
@@ -48,23 +48,28 @@ export default {
       projects: [],
       filteredProjects: [],
       loading: true,
-      selectedCountryCodes: [], // Changed to an array to handle multiple selections
+      selectedCountryCodes: [],
       resetMapSelection: false,
     };
   },
   methods: {
     fetchData() {
-      fetch('/SDG_2023.json')
-        .then(response => response.json())
+      fetch(`${process.env.BASE_URL}SDG_2023.json`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
         .then(data => {
           this.projects = data.projects;
-          this.filteredProjects = [...data.projects];
+          this.filteredProjects = [...this.projects];
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
           this.loading = false;
         });
-    },
-    selectCountry(countryCodes) {
-      this.selectedCountryCodes = countryCodes;
-      this.applyFilter();
     },
     resetCountrySelection() {
       this.selectedCountryCodes = [];
@@ -72,25 +77,34 @@ export default {
       this.applyFilter();
     },
     applyFilter() {
-    const [minBudget, maxBudget] = this.$refs.projectFilters.selectedBudgetRange;
-    this.filteredProjects = this.projects.filter(p => {
-      const budget = parseFloat(p.budget.replace(/[^0-9.]/g, ''));
-      return (
-        (this.$refs.projectFilters.selectedContinent.length === 0 || this.$refs.projectFilters.selectedContinent.includes(p.continent)) &&
-        (this.$refs.projectFilters.selectedCountry.length === 0 || this.$refs.projectFilters.selectedCountry.includes(p.country)) &&
-        (this.$refs.projectFilters.selectedTopic.length === 0 || this.$refs.projectFilters.selectedTopic.includes(p.topic)) &&
-        (this.$refs.projectFilters.selectedYear.length === 0 || this.$refs.projectFilters.selectedYear.includes(p.completion_date)) &&
-        (budget >= minBudget && budget <= maxBudget) &&
-        (this.selectedCountryCodes.length === 0 || this.selectedCountryCodes.includes(p.country_code))
-      );
-    });
-    this.resetMapSelection = false;
-  },
+      const filters = this.$refs.projectFilters;
+      if (!filters) return;
 
+      const { selectedContinent, selectedCountry, selectedTopic, selectedYear } = filters;
+      
+      this.filteredProjects = this.projects.filter(p => {
+        return (
+          (selectedContinent.length === 0 || selectedContinent.includes(p.continent)) &&
+          (selectedCountry.length === 0 || selectedCountry.includes(p.country)) &&
+          (selectedTopic.length === 0 || selectedTopic.includes(p.topic)) &&
+          (selectedYear.length === 0 || selectedYear.includes(p.completion_date))
+        );
+      });
+      this.updateSelectedCountryCodes();
+      this.resetMapSelection = false;
+    },
+    updateSelectedCountryCodes() {
+      this.selectedCountryCodes = [...new Set(this.filteredProjects.map(p => p.country_code))];
+    }
   },
   mounted() {
     this.fetchData();
   },
+  watch: {
+    filteredProjects() {
+      this.updateSelectedCountryCodes();
+    }
+  }
 };
 </script>
 
