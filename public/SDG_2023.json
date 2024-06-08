@@ -1,168 +1,472 @@
 {
-    "projects": [
+  "projects": [
       {
-        "id": 1,
-        "agency": "UNDP",
-        "topic": "SGBV",
-        "country": "Bangladesh",
-        "country_code": "BD",
-        "continent": "Asia",
-        "title": "Combatting SGBV in the digital sphere - SGBV",
-        "partner": "Korean National Police Agency",
-        "stakeholders": "Bangladesh Police (especially ‘Cyber Support for Women Cell’), Ministry of Law, Justice and Parliamentary Affairs (MoLJPA), Criminal Investigation Department (CID), Bangladesh Women Police Network, National Emergency Service-999",
-        "budget": "$100,000",
-        "completion_date": "2024",
-        "description": "In order to combat cyber violence against women and girls, this project will focus on a) finding solutions to make the digital space safer especially for the women and girls, b) enhance legal, procedural, and technical skill of the concerned police officials, judges and prosecutors addressing the digital sex crime, c) advocate for affirmative policy on cyber safety and security to address anonymous cyber harassment; and d) facilitate effective coordination among the service providers.",
-        "coordinates": {
-          "latitude": 23.8103,
-          "longitude": 90.4125
-        }
-      },
-      {
-        "id": 2,
-        "agency": "UNDP",
-        "topic": "Anti-Corruption",
-        "country": "Bhutan",
-        "country_code": "BT",
-        "continent": "Asia",
-        "title": "Clean Construction System - Transparency & Accountability",
-        "partner": "Seoul Metropolitan Infrastructure Headquarters",
-        "stakeholders": "Ministry of Infrastructure and Transport",
-        "budget": "$100,000",
-        "completion_date": "2023",
-        "description": "The project aims to enhance transparency, inclusiveness, and efficiency in the management of public infrastructure works in Bhutan by upgrading the existing Construction Management System (CMS) to a web-based platform and providing training for engineers. The project has two main components: the development of an updated web-based CMS in partnership with the World Bank, and conducting Training of Trainers (ToT) sessions for 4,000 engineers in collaboration with UNDP Seoul Policy Centre (USPC) and UNDP Bhutan. The objectives are in line with SDG 8, 9, and 10, and the key stakeholders include MoWHS DES, Construction Association of Bhutan (CAB), and USPC. The expected outcome is improved efficiency, transparency, and accountability in the construction sector through the upgraded CMS. The expected outputs include creating awareness on the CMS, advocating for its mandatory use, and building capacity at both government and private sector levels for the mass rollout of the CMS tool.",
-        "coordinates": {
-          "latitude": 27.4728,
-          "longitude": 89.6390
-        }
-      },
-      {
-        "id": 3,
-        "agency": "UNDP",
-        "topic": "Resilience",
-        "country": "Cambodia",
-        "country_code": "KH",
-        "continent": "Asia",
-        "title": "Sustainable Forestry - Community Forestry",
-        "partner": "National Institue of Forest Science (NIFoS) and Korea University",
-        "stakeholders": "Forestry Administration (FA) at national level, Cantonment of the Forestry Administration at provincial level and the UNDP GEF Small Grant Program (SGP)",
-        "budget": "$100,000",
-        "completion_date": "2024",
-        "description": "The initiative aims to address the challenges faced by Cambodia's community forestry program by leveraging Korea's experience and expertise in participatory community-based forestry and integrating reforestation activities with the local economy and livelihoods. The project seeks to provide policy options and capacity-building opportunities to practitioners at both national and local levels, enabling the full realization of community forestry in Cambodia and maximizing community benefits for sustainable natural resource management. The activities include stakeholder consultations, knowledge sharing, capacity building, and monitoring the implementation of the community forestry approach. The project aims to protect local biodiversity, maintain ecosystem services, and contribute to climate action, biodiversity conservation, and inclusive and sustainable development.",
-        "coordinates": {
-          "latitude": 11.5564,
-          "longitude": 104.9282
-        }
-      },
-      {
-        "id": 4,
-        "agency": "UNDP",
-        "topic": "Anti-Corruption",
-        "country": "Mongolia",
-        "country_code": "MN",
-        "continent": "Asia",
-        "title": "Clean Portal - Transparency & Accountability",
-        "partner": "Anti-Corruption & Civil Rights Commission",
-        "stakeholders": "Independent Authority Against Corruption (IAAC)",
-        "budget": "$100,000",
-        "completion_date": "2024",
-        "description": "The project aims to benchmark Anti-Corruption & Civil Rights Commission's Clean Portal system (corruption & public interest violation reporting system) and update the existing system in Mongolia. The overall objective of the initiative is to create an integrated, functional, easily accessible, electronic technology-based online corruption reporting and action mechanism available to Mongolians, which facilitates learning about the consequences of corruption; rights and responsibilities of people in stopping corruption; reporting public interest violations, whistleblowing, reporting corruption crimes, and seeing results in a timely manner from relevant authorities regarding investigation and disciplinary action.",
-        "coordinates": {
-          "latitude": 47.9186,
-          "longitude": 106.9170
-        }
-      },
-      {
-        "id": 5,
-        "agency": "UNDP",
-        "topic": "Resilience",
-        "country": "Philippines",
-        "country_code": "PH",
-        "continent": "Asia",
-        "title": "Sustainable Forestry - Community Forestry",
-        "partner": "National Institute of Forest Science (NIFoS) and Korea University",
-        "stakeholders": "MENRE-BARMM (Ministry of Environment, Natural Resources and Energy of the Bangsamoro Autonomous Region of Muslim Mindanao)",
-        "budget": "$75,000",
-        "completion_date": "2023",
-        "description": "In the Philippines, USPC plans to promote peace and sustainable development in a recently autonomous region (Bangsamoro Autonomous Region of Muslim Mindanao (BARMM)) through community forestry initiatives. This project will support the newly formed regional government's capacity to sustainably manage natural resources and provide livelihoods to local communities by equipping former combatants and local communities with the necessary skills to manage community forests.",
-        "coordinates": {
-          "latitude": 14.5995,
-          "longitude": 120.9842
-        }
-      },
-      {
-        "id": 6,
-        "agency": "UNDP",
-        "topic": "SGBV",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "continent": "Asia",
-        "title": "Enhancing M&E framework of one-stop center for survivors of SGBV (following Sunflower Center model)",
-        "partner": "Sunflower Center",
-        "stakeholders": "DKI Jakarta Government, Ministry of Women’s Empowerment and Child Protection, Metropolitan Police of DKI Jakarta, UN Women, UNFPA, and Tarakan hospital",
-        "budget": "$145,000",
-        "completion_date": "2023",
-        "description": "To develop a Monitoring and Evaluation Framework for the hospital-based integrated service center for GBV victims in Jakarta ('PPT Bunga Tanjung'). The M&E framework encompasses the standardized minimum criteria on physical space for the service center, safety of the facilities, management of the center and human resources, available services provided, referrals, and human rights protection and confidentiality assurance for survivors. Through the development and implementation of a robust M&E framework, the project aims to promote scale-up and/or replication of the One Stop Center model from Tarakan Hospital in other areas in Jakarta and other provinces in Indonesia.",
-        "coordinates": {
-          "latitude": -6.2088,
-          "longitude": 106.8456
-        }
-      },
-      {
-        "id": 7,
-        "agency": "UNDP",
-        "topic": "Resilience",
-        "country": "Indonesia",
-        "country_code": "ID",
-        "continent": "Asia",
-        "title": "Sustainable Forest Management",
-        "partner": "National Institute of Forest Science (NIFoS) and Korea University",
-        "stakeholders": "Ministry of Environment and Forestry (MoEF)",
-        "budget": "$75,000",
-        "completion_date": "2023",
-        "description": "The KALFOR project in Indonesia focuses on creating more effective land allocation and management of forest areas with high biodiversity and ecosystem services in the context of potential estate crops development in Kalimantan. It strengthens the efforts by local communities and their governments to ensure sustainable forest management in coordination with the central government institutions. USPC plans to enhance the impact of the KALFOR project by supporting additional areas of intervention located in Sanggau (West Kalimantan) and Kutai Kartanegara (East Kalimantan)",
-        "coordinates": {
-          "latitude": 0.7893,
-          "longitude": 113.9213
-        }
-      },
-      {
-        "id": 8,
-        "agency": "UNDP",
-        "topic": "Resilience",
-        "country": "Mongolia",
-        "country_code": "MN",
-        "continent": "Asia",
-        "title": "Sustainable Forestry - Preventing Illegal Logging",
-        "partner": "National Institute of Forest Science (NIFoS) and Korea University",
-        "stakeholders": "Ministry of Environment and Tourism (MET)",
-        "budget": "$90,000",
-        "completion_date": "2023",
-        "description": "This project aims to enhance forest protection and prevent illegal logging with the development of a by-law that incentivizes the reporting of illegal logging and other environmental crimes and the development of an integrated web-system for tracking along with a smartphone application to enable simplified reporting. This project will introduce a low-cost, high-impact innovation to the forestry sector, one that can significantly impact community engagement and has the potential to inform legislation based on data and knowledge generated.",
-        "coordinates": {
-            "latitude": 46.8625,
-            "longitude": 103.8467
-          }
-        },
-        {
-          "id": 9,
+          "id": 1,
           "agency": "UNDP",
-          "topic": "Private Sector",
+          "topic": "Sexual and gender-based violence",
+          "country": "Bangladesh",
+          "country_code": "BD",
+          "continent": "Asia",
+          "title": "Combatting SGBV in the digital sphere - SGBV",
+          "partner": "Korean National Police Agency",
+          "stakeholders": "Bangladesh Police (especially \u2018Cyber Support for Women Cell\u2019), Ministry of Law, Justice and Parliamentary Affairs (MoLJPA), Criminal Investigation Department (CID), Bangladesh Women Police Network, National Emergency Service-999\n",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "In order to combat cyber violence against women and girls, this project will focus on a) finding solutions to make the digital space safer especially for the women and girls, b) enhance legal, procedural, and technical skill of the concerned police officials, judges and prosecutors addressing the digital sex crime, c) advocate for affirmative policy on cyber safety and security to address anonymous cyber harassment; and d) facilitate effective coordination among the service providers \n",
+          "coordinates": {
+              "latitude": 23.8103,
+              "longitude": 90.4125
+          }
+      },
+      {
+          "id": 2,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Bhutan",
+          "country_code": "BT",
+          "continent": "Asia",
+          "title": "Clean Construction System - Transparency & Accountability",
+          "partner": "Seoul Metropolitan Infrastructure Headquarters",
+          "stakeholders": "Ministry of Infrastructure and Transport",
+          "budget": "$100,000",
+          "completion_date": "2023",
+          "description": "The project aims to enhance transparency, inclusiveness, and efficiency in the management of public infrastructure works in Bhutan by upgrading the existing Construction Management System (CMS) to a web-based platform and providing training for engineers. The project has two main components: the development of an updated web-based CMS in partnership with the World Bank, and conducting Training of Trainers (ToT) sessions for 4,000 engineers in collaboration with UNDP Seoul Policy Centre (USPC) and UNDP Bhutan. The objectives are in line with SDG 8, 9, and 10, and the key stakeholders include MoWHS DES, Construction Association of Bhutan (CAB), and USPC. The expected outcome is improved efficiency, transparency, and accountability in the construction sector through the upgraded CMS. The expected outputs include creating awareness on the CMS, advocating for its mandatory use, and building capacity at both government and private sector levels for the mass rollout of the CMS tool.",
+          "coordinates": {
+              "latitude": 27.5142,
+              "longitude": 90.4336
+          }
+      },
+      {
+          "id": 3,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Cambodia",
+          "country_code": "KH",
+          "continent": "Asia",
+          "title": "Sustainable Forestry - Community Forestry",
+          "partner": "National Institue of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Forestry Administration (FA) at national level, Cantonment of the Forestry Administration at provincial level and the UNDP GEF Small Grant Program (SGP)",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "The initiative aims to address the challenges faced by Cambodia's community forestry program by leveraging Korea's experience and expertise in participatory community-based forestry and integrating reforestation activities with local economy and livelihoods. The project seeks to provide policy options and capacity-building opportunities to practitioners at both national and local levels, enabling the full realization of community forestry in Cambodia and maximizing community benefits for sustainable natural resource management. The activities include stakeholder consultations, knowledge sharing, capacity building, and monitoring the implementation of the community forestry approach. The project aims to protect local biodiversity, maintain ecosystem services, and contribute to climate action, biodiversity conservation, and inclusive and sustainable development.",
+          "coordinates": {
+              "latitude": 12.5657,
+              "longitude": 104.991
+          }
+      },
+      {
+          "id": 4,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "Indonesia",
+          "country_code": "ID",
+          "continent": "Asia",
+          "title": "Enhancing M&E framework of one-stop center for survivors of SGBV (following Sunflower Center model)",
+          "partner": "Sunflower Center",
+          "stakeholders": "DKI Jakarta Government, Ministry \nof Women\u2019s Empowerment and Child Protection, Metropolitan \nPolice of DKI Jakarta, UN Women, UNFPA, and Tarakan hospital",
+          "budget": "$145,000",
+          "completion_date": "2023",
+          "description": "To develop a Monitoring and Evaluation Framework for the hospital-based integrated service center for GBV victims in Jakarta (\"PPT Bunga Tanjung\"). The M&E framework encompasses the standardized minimum criteria on physical space for the service center, safety of the facilities, management of the center and human resources, available services provided, referrals, and human rights protection and confidentiality assurance for survivors. Through the development and implementation of robust M&E framework, the project aims to promote scale-up and/or replication of One Stop Center model from Tarakan Hospital in other areas in Jakarta and other provinces in Indonesia.",
+          "coordinates": {
+              "latitude": -0.7893,
+              "longitude": 113.9213
+          }
+      },
+      {
+          "id": 5,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Indonesia",
+          "country_code": "ID",
+          "continent": "Asia",
+          "title": "Sustainable Forest Management",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Ministry of Environment and Forestry (MoEF)",
+          "budget": "$75,000",
+          "completion_date": "2023",
+          "description": "The KALFOR project in Indonesia focuses on creating more effective land allocation and management of forest areas with high biodiversity and ecosystem services in the context of potential estate crops development in Kalimantan. It strengthens the efforts by local communities and their governments to ensure sustainable forest management in coordination with the central government institutions.\u202fUSPC plans to enhance the impact of the KALFOR project by supporting additional areas of intervention located in Sanggau (West Kalimantan) and Kutai Kartanegara (East Kalimantan)",
+          "coordinates": {
+              "latitude": -0.7893,
+              "longitude": 113.9213
+          }
+      },
+      {
+          "id": 6,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Mongolia",
+          "country_code": "MN",
+          "continent": "Asia",
+          "title": "Sustainable Forestry - Preventing Illegal Logging",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Ministry of Environment and Tourism (MET)",
+          "budget": "$90,000",
+          "completion_date": "2023",
+          "description": "This project aims to enhance forest protection and prevent illegal logging with the development of a by-law that incentivizes the reporting of illegal logging and other environmental crimes and the development of an intergrated web-system for tracking along with a smartphone application to enable simplified reporting. This project will introduce a low-cost, high-impact innovation to the forestry sector, one that can significantly impact community engagement and has the potential to inform legislation based on data and knowledge generated.\u202f",
+          "coordinates": {
+              "latitude": 46.8625,
+              "longitude": 103.8467
+          }
+      },
+      {
+          "id": 7,
+          "agency": "UNDP",
+          "topic": "Supporting MSMEs through Inclusive Digital Transformation",
           "country": "Peru",
           "country_code": "PE",
           "continent": "South America",
           "title": "Private Sector Engagement and Development - Supporting MSMEs through Inclusive Digital Transformation",
-          "partner": "Small Enterprise and Market Services (SEMAS), an agency affiliated with the Ministry of SMEs and Startups of ROK",
+          "partner": "Small Enterprise and Market Service (SEMAS)",
           "stakeholders": "Ministry of Production of Peru",
           "budget": "$100,000",
           "completion_date": "2024",
-          "description": "The key objective of the SDG Partnership is to foster Peru’s digital transformation of traditional markets by scaling up UNDP Peru CO’s existing ‘Innova Tu Mercado’ project. Building on the progress to date and the network of partners (including the Ministry of Production of Peru, private financial sector, and civil society actors), the SDG partnership aims to i) adopt the most suitable digital tools, such as e-commerce platform and digital payment methods, and ii) scale up digital upskilling programs for entrepreneurs and SMEs in traditional markets, with a focus on women-led businesses. The project will contribute to the development of a more inclusive and sustainable economy by leveraging digital technologies to support micro, small, and medium enterprises (MSMEs), particularly those led by women, in the traditional market sector. By enhancing the digital skills of entrepreneurs and SMEs, this initiative aims to improve access to markets, increase efficiency, and foster innovation and growth within the local economy.",
+          "description": "The key objective of the SDG Partnership with Peru is to foster Peru\u2019s digital transformation of traditional markets by scaling up UNDP Peru CO\u2019s existing \u2018Innova Tu Mercado\u2019 project. Building on the progress to date and the network of partners (including the Ministry of Production of Peru, private financial sector, and civil society actors), the SDG partnership aims to i) adopt the most suitable digital tools, such as e-commerce platform and digital payment methods, and ii) scale up digital upskilling programs for entrepreneurs and SMEs in traditional markets, with a focus on women-led businesses. The project will contribute to the development of a more inclusive and sustainable economy by leveraging digital technologies to support micro, small, and medium enterprises (MSMEs), particularly those led by women, in the traditional market sector. By enhancing the digital skills of entrepreneurs and SMEs, this initiative aims to improve access to markets, increase efficiency, and foster innovation and growth within the local economy.",
           "coordinates": {
-            "latitude": -12.0464,
-            "longitude": -77.0428
+              "latitude": -9.19,
+              "longitude": -75.0152
           }
-        }
-      ]
-    }
-    
-  
+      },
+      {
+          "id": 8,
+          "agency": "UNDP",
+          "topic": "Supporting MSMEs through Inclusive Digital Transformation",
+          "country": "Bolivia",
+          "country_code": "BO",
+          "continent": "South America",
+          "title": "Private Sector Engagement and Development - Supporting MSMEs through Inclusive Digital Transformation",
+          "partner": "Small Enterprise and Market Service (SEMAS)",
+          "stakeholders": "Productive Development Bank (BDP)",
+          "budget": "$100,000",
+          "completion_date": "2026",
+          "description": "The key objective of the SDG Partnership with Bolivia is to foster a robust ecosystem supporting Bolivian MSMEs by integrating relevant Korean knowledge into UNDP Bolivia\u2019s existing initiatives (e.g. Digitization of Financial and Non-Financial Services for Women, Accelerator Lab). Building on the progress achieved thus far, and with the support of the Bolivian network of partners \u2013 particularly the Productive Development Bank (BDP), the private financial sector and civil society actors \u2014 the SDG partnership aims to i) develop a tailor-made market intelligence system, ii) design a venture studio for women and youth, and iii) establish an impact-driven venture capital model.",
+          "coordinates": {
+              "latitude": -16.2902,
+              "longitude": -63.5887
+          }
+      },
+      {
+          "id": 9,
+          "agency": "UNDP",
+          "topic": "Supporting MSMEs through Inclusive Digital Transformation",
+          "country": "Kazakhstan",
+          "country_code": "KZ",
+          "continent": "Asia",
+          "title": "Private Sector Engagement and Development - Supporting MSMEs through Inclusive Digital Transformation",
+          "partner": "Small Enterprise and Market Service (SEMAS)",
+          "stakeholders": "Ministry of Digital Development, Innovations, and Aerospace Industry",
+          "budget": "$100,000",
+          "completion_date": "2026",
+          "description": "The key objective of the SDG Partnership with Kazakhstan is to enhance the digital skills of youth and women entrepreneurs in the rural region of Kyzylorda. Building upon the best practices from the ROK, the SDG Partnership aims to i) develop curricula for online courses, ii) develop a Training of Trainers (ToT) programme for vulnerable groups and iii) organize a \u2018future forward forum\u2019 to support MSMEs in the Kyzylorda region by enhancing their digital skills and solutions, particularly in the areas of data analytics and decision-making.",
+          "coordinates": {
+              "latitude": 48.0196,
+              "longitude": 66.9237
+          }
+      },
+      {
+          "id": 10,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Sri Lanka",
+          "country_code": "LK",
+          "continent": "Asia",
+          "title": "Anti-Corruption Initative Assessment - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "Commission to Investigate Aleegations of Bribery or Corruption (CIABOC)",
+          "budget": "$100,000",
+          "completion_date": "2025",
+          "description": "The project aims to support Sri Lanka to upgrade its integrity assessment method by benchmarking Anti-Corruption Initiative Assessment of Korean Anti-Corruption & Civil Rights Commission. In March 2023, Sri Lanka became the first country to agree to an IMF bailout package, which included introducing new anti-corruption legislation as a key condition. We received request from BRH and RR of UNDP Sri Lanka to support knowledge exchange on Korea's anti-orruption experiences. Sri Lanka was selected as an official partner country given the significant momentum and strong support from UNDP's Global and Regional Governance Teams as well as commitment from the UNDP Sri Lanka.",
+          "coordinates": {
+              "latitude": 7.8731,
+              "longitude": 80.7718
+          }
+      },
+      {
+          "id": 11,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Namibia",
+          "country_code": "NA",
+          "continent": "Africa",
+          "title": "Forest Fire Prevention and Management",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Forestry Division; \nMinistry of Environment \nForestry and Tourism",
+          "budget": "$75,000",
+          "completion_date": "2024",
+          "description": "In the context of Namibia's semi-arid and arid ecosystems, marked by heightened fire risks due to changing climatic conditions, this project aims to overcome contextual challenges, including limited data and technical capacity for effective fire management, insufficient protective gear and equipment hindering timely responses, and poor coordination between forest fire alerts and climate information systems. Key targets include bridging gaps in staff skills and knowledge through targeted training, improving stakeholder coordination during uncontrolled fires, and establishing Regional Fire Management Units. Ultimately, the project seeks to enhance detection, monitoring, and response mechanisms, ensuring the resilience of Namibia's ecosystems and protecting community livelihoods, while aligning with global sustainability goals.",
+          "coordinates": {
+              "latitude": -22.9576,
+              "longitude": 18.4904
+          }
+      },
+      {
+          "id": 12,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Zambia",
+          "country_code": "ZM",
+          "continent": "Africa",
+          "title": "Sustainable Forestry - Community Forestry",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Ministry of Green Economy and Environmental Protection, Department of Forestry ",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "This project in Zambia aims to address high deforestation rates, biodiversity loss and community awareness gaps in the forestry sector. Through community forestry management, the initiative aims to empower local communities, reduce deforestation driven by factors like agriculture and charcoal production, and enhance biodiversity conservation. Leveraging existing legal frameworks and community structures, such as management groups, the project plans to create an enabling environment for sustainable forestry practices. The incorporation of ecological buffers and engagement in conservation activities align with the goal of maintaining ecosystem services and contributing to emissions reduction, including potential carbon trading. Overall, the project aims to address key challenges in Zambia's forestry sector and promote community-driven solutions.",
+          "coordinates": {
+              "latitude": -13.1339,
+              "longitude": 27.8493
+          }
+      },
+      {
+          "id": 13,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Albania",
+          "country_code": "AL",
+          "continent": "Europe",
+          "title": "Forest Fire Prevention and Management",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "National Forestry Agency, Tirana Agriculture University ",
+          "budget": "$100,000",
+          "completion_date": "2026",
+          "description": "The project will first increase awareness and promote forest fire management through trainings, exchange visit, public campaigns and educational materials.\u00a0 This activity will enable capacity building of over 150 personnel and officials from National Forestry Agency and 61 municipalities to combat wildfire with necessary tactical techniques, contributing to improving the early detection and response to forest fires in Albania based on Korean advanced experience.  Second, it will also develop a forest fire mobile reporting system/App called \u201cSmart Forest Disaster Application\u201d.\u00a0 This activity will enable the public residents in the vicinity of wildfires area to report forest fire ignitions via photos and videos. Detailed information on the location (GPS) and direction of forest fire spreads would be then shown via maps and images The app, besides on-site information in the early stages of forest fires, will also announce safety procedures for evacuation and will provide navigation to guide individuals to evacuation sites nearby.  Thirdly, the project will create a site-specific restoration manual according to the intensity of fire hazard and location of each site.  While the prevention of forest fires is the most important aspect of forest fire management, follow-up action is also important. This activity will largely contribute to the forest fire management practices and restoration as important aspects of disaster risk reduction and climate resilience in Albania through development of the site-specific restoration manual according to the intensity of fire hazard and the location of each site, based on the Korean experience.\u00a0\u00a0",
+          "coordinates": {
+              "latitude": 41.1533,
+              "longitude": 20.1683
+          }
+      },
+      {
+          "id": 14,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "El Salvador",
+          "country_code": "SV",
+          "continent": "South America",
+          "title": "Forest Fire Prevention and Management",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Ministry of \nEnvironment and \nNatural Resources,\nMinistry of Environment and Natural Resources",
+          "budget": "$100,000",
+          "completion_date": "2026",
+          "description": "This initiative in El Salvador aims to enhance forest fire prevention and management in Natural Protected Areas (NPAs) and buffer zones. Challenges include the need for advanced monitoring, inter-institutional coordination, community involvement, damage assessment methodologies and long-term sustainability. The overall objective is to strengthen technical knowledge through experiences with Korea, developing an early warning system. The initiative plans to adopt best practices from Korea, leveraging advanced technologies, enhancing collaboration, engaging communities, implementing effective damage assessments and building long-term capacity. Proposed reforms include a Fire Management Policy guided by Korean lessons, addressing environmental impacts, and ensuring biodiversity and ecosystem service conservation. ",
+          "coordinates": {
+              "latitude": 13.7942,
+              "longitude": -88.8965
+          }
+      },
+      {
+          "id": 15,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Mongolia",
+          "country_code": "MN",
+          "continent": "Asia",
+          "title": "Clean Portal - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission",
+          "stakeholders": "Independent Authority Against Corruption (IAAC)",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "The project aims to benchmark Anti-Corruption & Civil Rights Commission's Clean Portal system (corruption & public interest violation reporting system) and update the exisiting system in Mongolia. The overall objective of the initiative is to create an integrated, functional, easily accessible, electronic technology-based online corruption reporting and action mechanism available to Mongolians, which facilitates the learning about the consequences of corruption; rights and responsibilities of people in stopping corruption; reporting public interest violations, whistleblowing, reporting corruption crimes, and seeing results in timely manner from relevant authorities regarding investigation and disciplinary action.",
+          "coordinates": {
+              "latitude": 46.8625,
+              "longitude": 103.8467
+          }
+      },
+      {
+          "id": 16,
+          "agency": "UNDP",
+          "topic": "Sustainable Forestry",
+          "country": "Philippines",
+          "country_code": "PH",
+          "continent": "Asia",
+          "title": "Sustainable Forestry- Community Forestry",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "MENRE-BARMM (Ministry of Environment, Natural Resources and Energy of the Bangsamoro Autonomous Region of Muslim Mindanao)",
+          "budget": "$75,000",
+          "completion_date": "2024",
+          "description": "In the Philippines, USPC plans to promote peace and sustainable development in a recently autonomous region (Bangsamoro Autonomous Region of Muslim Mindanao (BARMM)) through community forestry initiatives. This project will support the newly formed regional government's capacity to sustainably manage natural resources and provide livelihoods to local communities by equipping former combatants and local communities with the necessary skills to manage community forests.",
+          "coordinates": {
+              "latitude": 12.8797,
+              "longitude": 121.774
+          }
+      },
+      {
+          "id": 17,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Algeria",
+          "country_code": "DZ",
+          "continent": "Africa",
+          "title": "Anti-Corruption Initative Assessment - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "National Body for the Prevention and Fight against Corruption (ONPLC), High Authority for Transparency, Prevention and Fight against Corruption (HATPLC)",
+          "budget": "$150,000",
+          "completion_date": "2024",
+          "description": "Fine-tuning Algeria's application of Korea's Anti-Corruption Initiative Assessment (AIA) in order to monitor and evaluate the first-ever anti-corruption strategy of Algeria.\n",
+          "coordinates": {
+              "latitude": 28.0339,
+              "longitude": 1.6596
+          }
+      },
+      {
+          "id": 18,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "Argentina",
+          "country_code": "AR",
+          "continent": "South America",
+          "title": "Monitoring & Evaluation of One Stop Service Mechanism - Sunflower Center",
+          "partner": "Sunflower Center",
+          "stakeholders": "Integral Pole of Women in Situations of Violence (Polo Integral de la Mujer en Situaci\u00f3n de violencia)",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "Secured support from the government and developed a Monitoring and Evaluation (M&E) framework for SGBV One-Stop Service Centers (Polo Integral de la Mujer en Situaci\u00f3n de violencia) in the Province of C\u00f3rdoba based on Korea\u2019s Sunflower Center model.\n",
+          "coordinates": {
+              "latitude": -38.4161,
+              "longitude": -63.6167
+          }
+      },
+      {
+          "id": 19,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "Bosnia and Herzegovina",
+          "country_code": "BA",
+          "continent": "Europe",
+          "title": "Combatting SGBV in the digital sphere - SGBV",
+          "partner": "Korea National Police Agency (KNPA)",
+          "stakeholders": "Police Directorate of the Federation of Bosnia and Herzegovina, Ministry of Interior of the Republika Srpska",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "Aims to work with law enforcement agencies in Bosnia and Herzegovina and relevant national authorities to strengthen awareness, capacities, and technical skills to detect, respond, and prevent tech-facilitated GBV.",
+          "coordinates": {
+              "latitude": 43.9159,
+              "longitude": 17.6791
+          }
+      },
+      {
+          "id": 20,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "Cote d'Ivoire",
+          "country_code": "CI",
+          "continent": "Africa",
+          "title": "TF GBV",
+          "partner": "KNPA",
+          "stakeholders": "Directorate of Information Technology and Technological Trails (DITT)",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "As a part of the KNPA-funded 'Police Capacity Building Support Programme for Combatting GBV in the Digital Sphere', Cote d'Ivoire aims to strengthen the policy capacity to effectively tackle digital sex crimes and build community's capacity to mitigate, prevent and respond to TF GBV through enhanced communication and sensitization. Also, the project aims to enhance the operational capacities of the Directorate of Information Technology and Technological Trains (DITT) and the Platform for the Fight Against Cybercrime (PLCC) and increase the judicial and legal assistance to provide survivor-centered support to victims of TF GBV.",
+          "coordinates": {
+              "latitude": 7.539989,
+              "longitude": -5.54708
+          }
+      },
+      {
+          "id": 21,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "Indonesia",
+          "country_code": "ID",
+          "continent": "Asia",
+          "title": "TF GBV",
+          "partner": "KNPA",
+          "stakeholders": "Indonesian National Police, Jakarta Metropolitan Police, Ministry of Women Empowerment and Child Protection, Ministry of Law and Human Rights, Ministry of Communication and Information",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "As a part of the KNPA-funded 'Police Capacity Building Support Programme for Combatting GBV in the Digital Sphere', Indonesia aims to facilitate knowledge exchange amongst relevant stakeholders in the country for addressing GBV in the digital sphere and build police capacity to strengthen three areas including a) digital sex crime investigation techniques; b) victim-centric reporting and police response system coupled with adequate protection mechanism; and c) public awareness raising and development of educational material. Also, the project aims to foster coordination and collaboration among police, relevant ministries and other stakeholders to develop an integrated response mechanism in handling technology-facilitated GBV.",
+          "coordinates": {
+              "latitude": -0.7893,
+              "longitude": 113.9213
+          }
+      },
+      {
+          "id": 22,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Kosovo",
+          "country_code": "XK",
+          "continent": "Europe",
+          "title": "Clean Portal - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "Agency for Prevention of Corruption (APC)",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "Aims to build digital corruption reporting system inspired by Korean ACRC's Clean Portal.",
+          "coordinates": {
+              "latitude": 42.6026,
+              "longitude": 20.903
+          }
+      },
+      {
+          "id": 23,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Montenegro",
+          "country_code": "ME",
+          "continent": "Europe",
+          "title": "Anti-Corruption Initative Assessment - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "Agency for Prevention of Corruption (APC)",
+          "budget": "$50,000",
+          "completion_date": "2024",
+          "description": "Established country's first ever Monitoring and Evaluation mechanism to evaluate public institutions' anti-corruption activities, which will lead to achieving country\u2019s core agenda, i.e. Accession to the European Union.\n",
+          "coordinates": {
+              "latitude": 42.7087,
+              "longitude": 19.3744
+          }
+      },
+      {
+          "id": 24,
+          "agency": "UNDP",
+          "topic": "Sexual and gender-based violence",
+          "country": "North Macedonia",
+          "country_code": "MK",
+          "continent": "Europe",
+          "title": "Combatting SGBV in the digital sphere - SGBV",
+          "partner": "Korea National Police Agency (KNPA)",
+          "stakeholders": "Ministry of Interior ",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "Aims to strengthen the multi-sectorial cooperation in Ministry of Interior of North Macedonia to prevent and combat digital sexual exploitation and abuse as well as to sensitize and capacitate the general public to prevent and report on SGBV in cyberspace.",
+          "coordinates": {
+              "latitude": 41.6086,
+              "longitude": 21.7453
+          }
+      },
+      {
+          "id": 25,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "T\u00fcrkiye",
+          "country_code": "TR",
+          "continent": "Europe",
+          "title": "Clean Construction System - Transparency & Accountability",
+          "partner": "Seoul Metropolitan Government (SMG)",
+          "stakeholders": "Gaziantep Metropolitan Municipality",
+          "budget": "$100,000",
+          "completion_date": "2026",
+          "description": "Aims to build construction project management system inspired by SMG's CCS.",
+          "coordinates": {
+              "latitude": 38.9637,
+              "longitude": 35.2433
+          }
+      },
+      {
+          "id": 26,
+          "agency": "UNDP",
+          "topic": "Transparency & Accountability",
+          "country": "Uzbekistan",
+          "country_code": "UZ",
+          "continent": "Asia",
+          "title": "Clean Portal - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "Anti-Corruption Agency",
+          "budget": "$100,000",
+          "completion_date": "2024",
+          "description": "Aims to build digital corruption reporting system inspired by Korean ACRC's Clean Portal.",
+          "coordinates": {
+              "latitude": 41.3775,
+              "longitude": 64.5853
+          }
+      }
+  ]
+}
