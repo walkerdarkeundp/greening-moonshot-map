@@ -1,7 +1,9 @@
 <template>
   <div class="project-card">
     <div class="card-content">
-      <img :src="'/logo/' + project.agency + '.png'" alt="Agency Logo" class="agency-logo">
+      <div class="logo-container">
+        <img :src="logoSrc" alt="Agency Logo" class="agency-logo">
+      </div>
       <div class="card-details">
         <h3>{{ project.title || 'No title available' }}</h3>
         <p><strong>Country:</strong> {{ project.country || 'No country available' }}</p>
@@ -9,7 +11,7 @@
         <p><strong>Partner:</strong> {{ project.partner || 'No partner available' }}</p>
         <p><strong>Stakeholders:</strong> {{ project.stakeholders || 'No stakeholders available' }}</p>
         <p><strong>Budget:</strong> {{ project.budget || 'No budget available' }}</p>
-        <p><strong>Completion Date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
+        <p><strong>Planned completion date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
         <p><strong>Description:</strong> {{ project.description || 'No description available' }}</p>
       </div>
     </div>
@@ -23,6 +25,11 @@ export default {
     project: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    logoSrc() {
+      return `${process.env.BASE_URL}logo/UNDP.png`;
     }
   }
 };
@@ -38,20 +45,29 @@ export default {
   color: #3a3a3a;
   font-size: 18px;
   font-weight: 400;
-  display: flex;
-  align-items: center;
 }
 
-.agency-logo {
-  width: 140px;
+.logo-container {
+  width: 69.02px;
   height: 140px;
+  flex-shrink: 0;
   margin-right: 40px;
   margin-left: 40px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agency-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .card-details {
   text-align: left;
+  flex-grow: 1;
 }
 
 .project-card h3 {
@@ -70,6 +86,6 @@ export default {
 
 .card-content {
   display: flex;
-  align-items: top;
+  align-items: flex-start;
 }
 </style>
