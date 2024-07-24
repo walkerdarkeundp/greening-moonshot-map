@@ -27,11 +27,13 @@ export default defineComponent({
     projects: Array,
     selectedCountryCodes: Array,
   },
-  setup(props) {
+  emits: ['country-selected'],
+  setup(props, { emit }) {
     const mapRef = ref(null);
     const arcgisTileUrl = 'https://geoservices.un.org/arcgis/rest/services/ClearMap_WebTopo/MapServer/tile/{z}/{y}/{x}?blankTile=false';
     let geoLayer = null;
     let countryFunding = {};
+    let countriesWithProjects = new Set();
 
     const getColor = (funding) => {
       const maxFunding = Math.max(...Object.values(countryFunding));
@@ -53,7 +55,7 @@ export default defineComponent({
           fillColor: getColor(countryFunding[countryCode] || 0),
           weight: 0,
           opacity: 0,
-          fillOpacity: countryFunding[countryCode] ? 0.6 : 0,
+          fillOpacity: countriesWithProjects.has(countryCode) ? 0.6 : 0,
         });
       }
     };
@@ -67,6 +69,15 @@ export default defineComponent({
       }
     };
 
+    const onCountryClick = (e) => {
+      const layer = e.target;
+      const countryCode = layer.feature.properties.ISO_A2;
+      if (countriesWithProjects.has(countryCode)) {
+        const countryName = layer.feature.properties.ADMIN;
+        emit('country-selected', { countryCode, countryName });
+      }
+    };
+
     onMounted(async () => {
       if (!mapRef.value) {
         console.error("Map container is not yet available");
@@ -74,13 +85,12 @@ export default defineComponent({
       }
       const leafletMap = mapRef.value.$data.map;
 
-      const projectResponse = await fetch('SDG_2023.json');
-      const projectData = await projectResponse.json();
-
+      // Process project data
       countryFunding = {};
-      projectData.projects.forEach(project => {
+      props.projects.forEach(project => {
         const countryCode = project.country_code;
         countryFunding[countryCode] = (countryFunding[countryCode] || 0) + 1;
+        countriesWithProjects.add(countryCode);
       });
 
       const geoResponse = await fetch('countries.json');
@@ -94,12 +104,20 @@ export default defineComponent({
             fillColor: getColor(funding),
             weight: 0,
             opacity: 0,
-            fillOpacity: funding > 0 ? 0.6 : 0,
+            fillOpacity: countriesWithProjects.has(countryCode) ? 0.6 : 0,
           };
         },
+        onEachFeature: (feature, layer) => {
+          const countryCode = feature.properties.ISO_A2;
+          if (countriesWithProjects.has(countryCode)) {
+            layer.on({
+              click: onCountryClick
+            });
+          }
+        }
       }).addTo(leafletMap);
 
-      clearSelection(); // Ensure styles are set correctly initially
+      clearSelection();
     });
 
     watch(() => props.selectedCountryCodes, () => {
@@ -117,7 +135,6 @@ export default defineComponent({
 });
 </script>
 
-
 <style scoped>
 .map-container {
   height: 600px;
@@ -126,7 +143,7 @@ export default defineComponent({
 
 .map-disclaimer {
   padding-top: 10px;
-  padding-bottom: 20px; /* Add some space below the disclaimer */
+  padding-bottom: 20px;
   text-align: left;
   font-size: 0.8em;
 }
