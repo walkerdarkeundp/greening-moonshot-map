@@ -11,7 +11,7 @@
         <p><strong>Partner:</strong> {{ project.partner || 'No partner available' }}</p>
         <p><strong>Stakeholders:</strong> {{ project.stakeholders || 'No stakeholders available' }}</p>
         <p><strong>Budget:</strong> {{ project.budget || 'No budget available' }}</p>
-        <p><strong>Planned completion date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
+        <p><strong>Completion date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
         <p><strong>Description:</strong> {{ project.description || 'No description available' }}</p>
       </div>
     </div>
