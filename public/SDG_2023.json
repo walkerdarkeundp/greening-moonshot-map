@@ -117,8 +117,8 @@
           "continent": "South America",
           "title": "Private Sector Engagement and Development - Supporting MSMEs through Inclusive Digital Transformation",
           "partner": "Small Enterprise and Market Service (SEMAS)",
-          "stakeholders": "Ministry of Production of Peru",
-          "budget": "100,000 USD",
+          "stakeholders": "Innova Tu Mercados network including the Ministry of Production of Peru, Prime Minister’s Office, Musa, and 18 municipalities",
+          "budget": "150,000 USD",
           "completion_date": "2024",
           "description": "The key objective of the SDG Partnership with Peru is to foster Peru\u2019s digital transformation of traditional markets by scaling up UNDP Peru CO\u2019s existing \u2018Innova Tu Mercado\u2019 project. Building on the progress to date and the network of partners (including the Ministry of Production of Peru, private financial sector, and civil society actors), the SDG partnership aims to i) adopt the most suitable digital tools, such as e-commerce platform and digital payment methods, and ii) scale up digital upskilling programs for entrepreneurs and SMEs in traditional markets, with a focus on women-led businesses. The project will contribute to the development of a more inclusive and sustainable economy by leveraging digital technologies to support micro, small, and medium enterprises (MSMEs), particularly those led by women, in the traditional market sector. By enhancing the digital skills of entrepreneurs and SMEs, this initiative aims to improve access to markets, increase efficiency, and foster innovation and growth within the local economy.",
           "coordinates": {
@@ -137,7 +137,7 @@
           "partner": "Small Enterprise and Market Service (SEMAS)",
           "stakeholders": "Productive Development Bank (BDP)",
           "budget": "100,000 USD",
-          "completion_date": "2026",
+          "completion_date": "2025",
           "description": "The key objective of the SDG Partnership with Bolivia is to foster a robust ecosystem supporting Bolivian MSMEs by integrating relevant Korean knowledge into UNDP Bolivia\u2019s existing initiatives (e.g. Digitization of Financial and Non-Financial Services for Women, Accelerator Lab). Building on the progress achieved thus far, and with the support of the Bolivian network of partners \u2013 particularly the Productive Development Bank (BDP), the private financial sector and civil society actors \u2014 the SDG partnership aims to i) develop a tailor-made market intelligence system, ii) design a venture studio for women and youth, and iii) establish an impact-driven venture capital model.",
           "coordinates": {
               "latitude": -16.2902,
@@ -155,7 +155,7 @@
           "partner": "Small Enterprise and Market Service (SEMAS)",
           "stakeholders": "Ministry of Digital Development, Innovations, and Aerospace Industry",
           "budget": "100,000 USD",
-          "completion_date": "2026",
+          "completion_date": "2025",
           "description": "The key objective of the SDG Partnership with Kazakhstan is to enhance the digital skills of youth and women entrepreneurs in the rural region of Kyzylorda. Building upon the best practices from the ROK, the SDG Partnership aims to i) develop curricula for online courses, ii) develop a Training of Trainers (ToT) programme for vulnerable groups and iii) organize a \u2018future forward forum\u2019 to support MSMEs in the Kyzylorda region by enhancing their digital skills and solutions, particularly in the areas of data analytics and decision-making.",
           "coordinates": {
               "latitude": 48.0196,
@@ -227,7 +227,7 @@
           "partner": "National Institute of Forest Science (NIFoS) and Korea University",
           "stakeholders": "National Forestry Agency, Tirana Agriculture University ",
           "budget": "100,000 USD",
-          "completion_date": "2026",
+          "completion_date": "31 December 2025",
           "description": "The project will first increase awareness and promote forest fire management through trainings, exchange visit, public campaigns and educational materials.\u00a0 This activity will enable capacity building of over 150 personnel and officials from National Forestry Agency and 61 municipalities to combat wildfire with necessary tactical techniques, contributing to improving the early detection and response to forest fires in Albania based on Korean advanced experience.  Second, it will also develop a forest fire mobile reporting system/App called \u201cSmart Forest Disaster Application\u201d.\u00a0 This activity will enable the public residents in the vicinity of wildfires area to report forest fire ignitions via photos and videos. Detailed information on the location (GPS) and direction of forest fire spreads would be then shown via maps and images The app, besides on-site information in the early stages of forest fires, will also announce safety procedures for evacuation and will provide navigation to guide individuals to evacuation sites nearby.  Thirdly, the project will create a site-specific restoration manual according to the intensity of fire hazard and location of each site.  While the prevention of forest fires is the most important aspect of forest fire management, follow-up action is also important. This activity will largely contribute to the forest fire management practices and restoration as important aspects of disaster risk reduction and climate resilience in Albania through development of the site-specific restoration manual according to the intensity of fire hazard and the location of each site, based on the Korean experience.\u00a0\u00a0",
           "coordinates": {
               "latitude": 41.1533,
@@ -245,7 +245,7 @@
           "partner": "National Institute of Forest Science (NIFoS) and Korea University",
           "stakeholders": "Ministry of \nEnvironment and \nNatural Resources,\nMinistry of Environment and Natural Resources",
           "budget": "100,000 USD",
-          "completion_date": "2026",
+          "completion_date": "31 December 2025",
           "description": "This initiative in El Salvador aims to enhance forest fire prevention and management in Natural Protected Areas (NPAs) and buffer zones. Challenges include the need for advanced monitoring, inter-institutional coordination, community involvement, damage assessment methodologies and long-term sustainability. The overall objective is to strengthen technical knowledge through experiences with Korea, developing an early warning system. The initiative plans to adopt best practices from Korea, leveraging advanced technologies, enhancing collaboration, engaging communities, implementing effective damage assessments and building long-term capacity. Proposed reforms include a Fire Management Policy guided by Korean lessons, addressing environmental impacts, and ensuring biodiversity and ecosystem service conservation. ",
           "coordinates": {
               "latitude": 13.7942,
@@ -407,7 +407,7 @@
           "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
           "stakeholders": "Agency for Prevention of Corruption (APC)",
           "budget": "50,000 USD",
-          "completion_date": "2024",
+          "completion_date": "2025",
           "description": "Established country's first ever Monitoring and Evaluation mechanism to evaluate public institutions' anti-corruption activities, which will lead to achieving country\u2019s core agenda, i.e. Accession to the European Union.\n",
           "coordinates": {
               "latitude": 42.7087,
@@ -466,6 +466,24 @@
           "coordinates": {
               "latitude": 41.3775,
               "longitude": 64.5853
+          }
+      },
+      {
+        "id": 27,
+          "agency": "UNDP",
+          "topic": "Promoting Sustainable Forestry",
+          "country": "Ecuador",
+          "country_code": "ECU",
+          "continent": "South America",
+          "title": "Forest Fire Prevention and Management",
+          "partner": "National Institute of Forest Science (NIFoS) and Korea University",
+          "stakeholders": "Mancomunidad Bosque Seco, PROAmazonía, Amazonía Sin Fuego, Ecuador Ministry of the Environment, Water and Ecological Transition (MAATE), National Secretariat for Risk Management",
+          "budget": "189,755 USD",
+          "completion_date": "2025",
+          "description": "The Bosque Seco Biosphere Reserve is a highly vulnerable area to forest fires that currently does not have an integrated early warning system for fire danger forecasting. This initiative seeks to generate and implement a data-driven forest fire prediction and monitoring system for the Bosque Seco territory. This project also aims to reduce gender inequality in natural resource management, a field from which women have been traditionally excluded. The project will be composed of five components, all of which have been disaggregated into activities: a) Development of a data-driven forest fire prediction and monitoring system for Ecuador. b) Operationalisation of the system by integrating its functioning into existing institutions. c) Linkage of the prediction and monitoring system alerts to the system to existing alert mechanisms. d) Communication of the work and results obtained. e) Following the forest fires in Bosque Seco and Ecuador in September 2024, the project will support the purchase of forest fire equipment to support fire fighting and prevention efforts.",
+          "coordinates": {
+              "latitude": 23.8103,
+              "longitude": 90.4125
           }
       }
   ]
