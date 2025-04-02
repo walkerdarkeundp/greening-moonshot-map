@@ -469,7 +469,7 @@
           }
       },
       {
-		  "id": 27,
+	  "id": 27,
           "agency": "UNDP",
           "topic": "Promoting Sustainable Forestry",
           "country": "Ecuador",
@@ -486,8 +486,8 @@
               "longitude": 78.1834
           }
       },
-	  {
-		  "id": 28,
+      {
+	  "id": 28,
           "agency": "UNDP",
           "topic": "Improving Transparency & Accountability",
           "country": "Colombia",
@@ -502,10 +502,10 @@
           "coordinates": {
               "latitude": 4.5709,
               "longitude": -74.2973
-		  }
-	  },
-	  {
-		  "id": 29,
+	  }
+       },
+       {
+	  "id": 29,
           "agency": "UNDP",
           "topic": "Tackling Gender-based Violence",
           "country": "Democratic Republic of the Congo",
@@ -520,10 +520,10 @@
           "coordinates": {
               "latitude": -4.0383,
               "longitude": 21.7587
-		  }
-	  },
-	  {
-		  "id": 30,
+	  }
+       },
+       {
+	  "id": 30,
           "agency": "UNDP",
           "topic": "Tackling Gender-based Violence",
           "country": "Kyrgyzstan",
@@ -538,7 +538,7 @@
           "coordinates": {
               "latitude": 42.8746,
               "longitude": 74.5968
-		  }
 	  }
+       }
   ]
 }
