@@ -190,7 +190,7 @@
           "title": "Forest Fire Prevention and Management",
           "partner": "National Institute of Forest Science (NIFoS) and Korea University",
           "stakeholders": "Forestry Division; \nMinistry of Environment \nForestry and Tourism",
-          "budget": "75,000 USD",
+          "budget": "185,000 USD",
           "completion_date": "2025",
           "description": "In the context of Namibia's semi-arid and arid ecosystems, marked by heightened fire risks due to changing climatic conditions, this project aims to overcome contextual challenges, including limited data and technical capacity for effective fire management, insufficient protective gear and equipment hindering timely responses, and poor coordination between forest fire alerts and climate information systems. Key targets include bridging gaps in staff skills and knowledge through targeted training, improving stakeholder coordination during uncontrolled fires, and establishing Regional Fire Management Units. Ultimately, the project seeks to enhance detection, monitoring, and response mechanisms, ensuring the resilience of Namibia's ecosystems and protecting community livelihoods, while aligning with global sustainability goals.",
           "coordinates": {
@@ -208,7 +208,7 @@
           "title": "Sustainable Forestry - Community Forestry",
           "partner": "National Institute of Forest Science (NIFoS) and Korea University",
           "stakeholders": "Ministry of Green Economy and Environmental Protection, Department of Forestry ",
-          "budget": "100,000 USD",
+          "budget": "160,000 USD",
           "completion_date": "2025",
           "description": "This project in Zambia aims to address high deforestation rates, biodiversity loss and community awareness gaps in the forestry sector. Through community forestry management, the initiative aims to empower local communities, reduce deforestation driven by factors like agriculture and charcoal production, and enhance biodiversity conservation. Leveraging existing legal frameworks and community structures, such as management groups, the project plans to create an enabling environment for sustainable forestry practices. The incorporation of ecological buffers and engagement in conservation activities align with the goal of maintaining ecosystem services and contributing to emissions reduction, including potential carbon trading. Overall, the project aims to address key challenges in Zambia's forestry sector and promote community-driven solutions.",
           "coordinates": {
@@ -388,7 +388,7 @@
           "title": "Clean Portal - Transparency & Accountability",
           "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
           "stakeholders": "Agency for Prevention of Corruption (APC)",
-          "budget": "100,000 USD",
+          "budget": "140,000 USD",
           "completion_date": "2025",
           "description": "Aims to build digital corruption reporting system inspired by Korean ACRC's Clean Portal.",
           "coordinates": {
@@ -443,7 +443,7 @@
           "partner": "Seoul Metropolitan Government (SMG)",
           "stakeholders": "Gaziantep Metropolitan Municipality",
           "budget": "100,000 USD",
-          "completion_date": "2026",
+          "completion_date": "2025",
           "description": "Aims to build construction project management system inspired by SMG's CCS.",
           "coordinates": {
               "latitude": 38.9637,
@@ -461,7 +461,7 @@
           "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
           "stakeholders": "Anti-Corruption Agency",
           "budget": "100,000 USD",
-          "completion_date": "2024",
+          "completion_date": "2025",
           "description": "Aims to build digital corruption reporting system inspired by Korean ACRC's Clean Portal.",
           "coordinates": {
               "latitude": 41.3775,
@@ -469,7 +469,7 @@
           }
       },
       {
-        "id": 27,
+		  "id": 27,
           "agency": "UNDP",
           "topic": "Promoting Sustainable Forestry",
           "country": "Ecuador",
@@ -485,6 +485,60 @@
               "latitude": 1.8312,
               "longitude": 78.1834
           }
-      }
+      },
+	  {
+		  "id": 28,
+          "agency": "UNDP",
+          "topic": "Improving Transparency & Accountability",
+          "country": "Colombia",
+          "country_code": "CO",
+          "continent": "South America",
+          "title": "Corruption Risk Assessment - Transparency & Accountability",
+          "partner": "Anti-Corruption & Civil Rights Commission (ACRC)",
+          "stakeholders": "Administrative Department of the Public Service of Colombia (DAFP), and Congress of Colombia",
+          "budget": "100,000 USD",
+          "completion_date": "2023",
+          "description": "Enhanced Colombian Parliament’s commitment to fight against corruption through benchmarking Korea’s Corruption Risk Assessment (CRA) methodology.",
+          "coordinates": {
+              "latitude": 4.5709,
+              "longitude": -74.2973
+		  }
+	  },
+	  {
+		  "id": 29,
+          "agency": "UNDP",
+          "topic": "Tackling Gender-based Violence",
+          "country": "Democratic Republic of the Congo",
+          "country_code": "CD",
+          "continent": "Africa",
+          "title": "Police Capacity Building - Addressing GBV",
+          "partner": "Sunflower Center, Korean National Police Agency (KNPA)",
+          "stakeholders": "Congolese National Police (PNC; Police nationale congolaise)",
+          "budget": "50,000 USD",
+          "completion_date": "2023",
+          "description": "Strengthened the capacity of the Congolese National Police (PNC) in handling SGBV cases by sharing Korean expertise; synergized with the KOICA-funded project on SGBV; and supported mobilization of ODA funding and technical assistance from the Korea National Police Agency (KNPA).",
+          "coordinates": {
+              "latitude": -4.0383,
+              "longitude": 21.7587
+		  }
+	  },
+	  {
+		  "id": 30,
+          "agency": "UNDP",
+          "topic": "Tackling Gender-based Violence",
+          "country": "Kyrgyzstan",
+          "country_code": "KG",
+          "continent": "Asia",
+          "title": "Police Capacity Building - Addressing GBV",
+          "partner": "Sunflower Center, Korean National Police Agency (KNPA)",
+          "stakeholders": "Ministry of Interior, Police Academy of Kyrgyzstan, Spotlight Initiative",
+          "budget": "120,000 USD",
+          "completion_date": "2023",
+          "description": "Synergized with the Spotlight initiative to strengthen professional training programmes and teaching materials of the Police Academy of Kyrgyz Republic through integration of Korean police training programmes addressing GBV and the Sunflower Center model. Sunflower Center-like mechanism to be built in Bishkek.",
+          "coordinates": {
+              "latitude": 42.8746,
+              "longitude": 74.5968
+		  }
+	  }
   ]
 }
