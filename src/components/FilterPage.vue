@@ -44,6 +44,8 @@ import ProjectFilters from './FilterPage/ProjectFilters';
 import ProjectCard from './FilterPage/ProjectCard.vue';
 import FundingMap from './FilterPage/FundingMap.vue';
 import 'leaflet/dist/leaflet.css';
+import * as XLSX from 'xlsx';
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
   components: {
@@ -86,6 +88,66 @@ export default {
           this.loading = false;
         });
     },
+    fetchXLSX() {
+      fetch(`${process.env.BASE_URL}WebMap30-04.xlsx`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.arrayBuffer();
+        })
+        .then(xlsxArrayBuffer => {
+          const workbook = XLSX.read(xlsxArrayBuffer, { type: 'array' });
+          const sheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[sheetName];
+          const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+          const normalizedData = jsonData.map(obj =>
+            Object.fromEntries(
+              Object.entries(obj).map(([key, value]) => [key.toLowerCase(), value])
+            )
+          );
+
+          return normalizedData;
+        })
+        .then(jsonData => {
+          return fetch(`${process.env.BASE_URL}continentscountries.json`)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`Failed to fetch country codes: ${response.statusText}`);
+              }
+              return response.json();
+            })
+            .then(countryCodes => {
+              const countryCodeMap = new Map();
+              Object.keys(countryCodes).forEach(region => {
+                const countries = countryCodes[region];
+                Object.keys(countries).forEach(countryName => {
+                  countryCodeMap.set(countryName.trim(), countries[countryName].country_code);
+                });
+              });
+
+              // Додаємо country_code до jsonData
+              const enrichedData = jsonData.map(row => ({
+                ...row,
+                id: uuidv4(),
+                country_code: countryCodeMap.get(row.country.trim()) || 'Unknown',
+              }));
+
+              return enrichedData;
+          });
+        })
+        .then(projects => {
+          this.projects = projects;
+          this.filteredProjects = [...this.projects];
+          this.prioritizedProjects = [...this.projects];
+          this.loading = false;}
+        )
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          this.loading = false;
+        });
+    },
     resetCountrySelection() {
       this.selectedCountryCodes = [];
       this.selectedCountries = [];
@@ -95,8 +157,10 @@ export default {
     updateSelectedCountries(countries) {
       this.selectedCountries = countries;
       this.selectedCountryCodes = this.projects
-        .filter(p => countries.includes(p.country))
-        .map(p => p.country_code);
+        .filter(p => {
+          return countries.includes(p.country)
+        })
+      .map(p => p.country_code);
       this.recentSelections.countries = countries;
       this.applyFilter();
     },
@@ -174,7 +238,8 @@ export default {
     },
   },
   mounted() {
-    this.fetchData();
+    // this.fetchData();
+    this.fetchXLSX();
   },
   watch: {
     filteredProjects() {
