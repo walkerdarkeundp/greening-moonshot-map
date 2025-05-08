@@ -6,14 +6,9 @@
       </div>
       <div class="card-details">
         <h3>{{ project.title || 'No title available' }}</h3>
+        <p><strong>Region:</strong> {{ project.region || 'No region available' }}</p>
         <p><strong>Country:</strong> {{ project.country || 'No country available' }}</p>
         <p><strong>Story:</strong> <a :href="project.story || ''" class="story-link">{{ project.story || 'No country available' }}</a></p>
-        <!-- <p><strong>Topic:</strong> {{ project.topic || 'No topic available' }}</p>
-        <p><strong>Partner:</strong> {{ project.partner || 'No partner available' }}</p>
-        <p><strong>Stakeholders:</strong> {{ project.stakeholders || 'No stakeholders available' }}</p>
-        <p><strong>Budget:</strong> {{ project.budget || 'No budget available' }}</p>
-        <p><strong>Completion date:</strong> {{ project.completion_date || 'No completion date available' }}</p>
-        <p><strong>Description:</strong> {{ project.description || 'No description available' }}</p> -->
         <img :src="project.image || ''" alt="">
       </div>
     </div>
