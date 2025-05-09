@@ -69,6 +69,40 @@ export default defineComponent({
       }
     };
 
+    let popup = L.popup();
+
+    function onMapClick(e) {
+  if (!mapRef.value) {
+    console.error("Map container is not yet available");
+    return;
+  }
+
+  const latlng = e.latlng;
+  let clickedCountry = null;
+
+      geoLayer.eachLayer((layer) => {
+    const layerBounds = layer.getBounds();
+    if (layerBounds.contains(latlng)) {
+      const countryCode = layer.feature.properties.ISO_A2;
+      const countryName = layer.feature.properties.ADMIN;
+      const countryContinent = layer.feature.properties.CONTINENT;
+      clickedCountry = { countryCode, countryName, countryContinent };
+    }
+  });
+      const clickedProject = clickedCountry ? props.projects.find(project => project.country === clickedCountry.countryName) : null;
+
+  popup
+    .setLatLng(latlng)
+    .setContent(
+      clickedCountry
+        ? `Region: ${clickedProject ? clickedProject.region : clickedCountry.countryContinent} <br>
+        Country: ${clickedCountry.countryName}`
+        : `You clicked the map at ${latlng.toString()}`
+    )
+    .openOn(mapRef.value.$data.map);
+}
+
+
     const onCountryClick = (e) => {
       const layer = e.target;
       const countryCode = layer.feature.properties.ISO_A2;
@@ -111,7 +145,11 @@ export default defineComponent({
           const countryCode = feature.properties.ISO_A2;
           if (countriesWithProjects.has(countryCode)) {
             layer.on({
-              click: onCountryClick
+              click: (e) => {
+                onCountryClick(e);
+                onMapClick(e, layer)
+              }
+              
             });
           }
         }
@@ -136,15 +174,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.map-container {
-  height: 600px;
-  position: relative;
-}
+  .map-container {
+    height: 600px;
+    position: relative;
+  }
 
-.map-disclaimer {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-align: left;
-  font-size: 0.8em;
-}
+  .map-disclaimer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: left;
+    font-size: 0.8em;
+  }
 </style>

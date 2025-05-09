@@ -9,7 +9,7 @@
         <p><strong>Region:</strong> {{ project.region || 'No region available' }}</p>
         <p><strong>Country:</strong> {{ project.country || 'No country available' }}</p>
         <p><strong>Story:</strong> <a :href="project.story || ''" class="story-link">{{ project.story || 'No country available' }}</a></p>
-        <img :src="project.image || ''" alt="">
+        <img class="card-image" :src="project.image || defaultImgSrc" alt="" @error="handleImageError" >
       </div>
     </div>
   </div>
@@ -27,7 +27,15 @@ export default {
   computed: {
     logoSrc() {
       return `${process.env.BASE_URL}logo/UNDP.png`;
+    },
+    defaultImgSrc() {
+      return `${process.env.BASE_URL}icons/default-image.svg`;
     }
+  },
+  methods: {
+    handleImageError(event) {
+      event.target.src = this.defaultImgSrc;
+    },
   }
 };
 </script>
@@ -88,5 +96,10 @@ export default {
 
 .story-link {
   text-decoration: none;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
 }
 </style>
