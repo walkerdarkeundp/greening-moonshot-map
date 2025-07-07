@@ -2,12 +2,14 @@ const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-
+  // Set publicPath conditionally for production and development environments
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/greening-moonshot-map/' // 👈 Use your repo name here
-    : '/',
+    ? '/' // Use this path when building for production (for GitHub Pages)
+    : '/', // Use root path for development
 
   pluginOptions: {
-    vuetify: {}
+    vuetify: {
+      // Placeholder for Vuetify loader options
+    }
   }
 });
