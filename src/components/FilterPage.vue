@@ -26,7 +26,9 @@
           <div v-if="filteredProjects.length === 0" class="no-results-message">
             <p>No projects match your current filter selection.</p>
             <p>Please try adjusting your filters to see more results.</p>
-            <v-btn @click="resetFilters" color="primary" class="mt-3">Reset Filters</v-btn>
+            <v-btn @click="resetFilters" color="primary" class="mt-3"
+              >Reset Filters</v-btn
+            >
           </div>
           <div v-else class="projects">
             <div v-for="project in prioritizedProjects" :key="project.id">
@@ -35,17 +37,28 @@
           </div>
         </div>
       </div>
+
+      <a
+        href="https://www.undp.org/accountability/social-and-environmental-responsibility/sustainable-operations"
+        class="footer-iframe"
+      >
+        <img
+          src="/images/website-iframe.png"
+          alt="UNDP Page Preview"
+          class="iframe-image"
+        />
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import ProjectFilters from './FilterPage/ProjectFilters';
-import ProjectCard from './FilterPage/ProjectCard.vue';
-import FundingMap from './FilterPage/FundingMap.vue';
-import 'leaflet/dist/leaflet.css';
-import * as XLSX from 'xlsx';
-import { v4 as uuidv4 } from 'uuid';
+import ProjectFilters from "./FilterPage/ProjectFilters";
+import ProjectCard from "./FilterPage/ProjectCard.vue";
+import FundingMap from "./FilterPage/FundingMap.vue";
+import "leaflet/dist/leaflet.css";
+import * as XLSX from "xlsx";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   components: {
@@ -71,80 +84,89 @@ export default {
   methods: {
     fetchData() {
       fetch(`${process.env.BASE_URL}SDG_2023.json`)
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           this.projects = data.projects;
           this.filteredProjects = [...this.projects];
           this.prioritizedProjects = [...this.projects];
           this.loading = false;
         })
-        .catch(error => {
-          console.error('Error fetching data:', error);
+        .catch((error) => {
+          console.error("Error fetching data:", error);
           this.loading = false;
         });
     },
     fetchXLSX() {
       fetch(`${process.env.BASE_URL}WebMap30-04.xlsx`)
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           return response.arrayBuffer();
         })
-        .then(xlsxArrayBuffer => {
-          const workbook = XLSX.read(xlsxArrayBuffer, { type: 'array' });
+        .then((xlsxArrayBuffer) => {
+          const workbook = XLSX.read(xlsxArrayBuffer, { type: "array" });
           const sheetName = workbook.SheetNames[0];
           const worksheet = workbook.Sheets[sheetName];
           const jsonData = XLSX.utils.sheet_to_json(worksheet);
 
-          const normalizedData = jsonData.map(obj =>
+          const normalizedData = jsonData.map((obj) =>
             Object.fromEntries(
-              Object.entries(obj).map(([key, value]) => [key.toLowerCase(), value])
+              Object.entries(obj).map(([key, value]) => [
+                key.toLowerCase(),
+                value,
+              ])
             )
           );
 
           return normalizedData;
         })
-        .then(jsonData => {
+        .then((jsonData) => {
           return fetch(`${process.env.BASE_URL}continentscountries.json`)
-            .then(response => {
+            .then((response) => {
               if (!response.ok) {
-                throw new Error(`Failed to fetch country codes: ${response.statusText}`);
+                throw new Error(
+                  `Failed to fetch country codes: ${response.statusText}`
+                );
               }
               return response.json();
             })
-            .then(countryCodes => {
+            .then((countryCodes) => {
               const countryCodeMap = new Map();
-              Object.keys(countryCodes).forEach(region => {
+              Object.keys(countryCodes).forEach((region) => {
                 const countries = countryCodes[region];
-                Object.keys(countries).forEach(countryName => {
-                  countryCodeMap.set(countryName.trim(), countries[countryName].country_code);
+                Object.keys(countries).forEach((countryName) => {
+                  countryCodeMap.set(
+                    countryName.trim(),
+                    countries[countryName].country_code
+                  );
                 });
               });
 
               // Додаємо country_code до jsonData
-              const enrichedData = jsonData.map(row => ({
+              const enrichedData = jsonData.map((row) => ({
                 ...row,
                 id: uuidv4(),
-                country_code: countryCodeMap.get(row.country.trim()) || 'Unknown',
+                country_code:
+                  countryCodeMap.get(row.country.trim()) || "Unknown",
               }));
 
               return enrichedData;
-          });
+            });
         })
-        .then(projects => {
+        .then((projects) => {
           this.projects = projects;
           this.filteredProjects = [...this.projects];
           this.prioritizedProjects = [...this.projects];
-          this.loading = false;}
-        )
-        .catch(error => {
-          console.error('Error fetching data:', error);
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
           this.loading = false;
         });
     },
@@ -157,10 +179,10 @@ export default {
     updateSelectedCountries(countries) {
       this.selectedCountries = countries;
       this.selectedCountryCodes = this.projects
-        .filter(p => {
-          return countries.includes(p.country)
+        .filter((p) => {
+          return countries.includes(p.country);
         })
-      .map(p => p.country_code);
+        .map((p) => p.country_code);
       this.recentSelections.countries = countries;
       this.applyFilter();
     },
@@ -170,26 +192,31 @@ export default {
     },
     onCountrySelected({ countryName }) {
       const countryIndex = this.selectedCountries.indexOf(countryName);
-      
+
       if (countryIndex > -1) {
         // If the country is already selected, remove it
-        this.selectedCountries = this.selectedCountries.filter(c => c !== countryName);
+        this.selectedCountries = this.selectedCountries.filter(
+          (c) => c !== countryName
+        );
       } else {
         // If the country is not selected, add it
         this.selectedCountries = [...this.selectedCountries, countryName];
       }
-      
+
       // Update the ProjectFilters component
       this.$refs.projectFilters.selectedCountry = [...this.selectedCountries];
-      
+
       // Update selectedCountryCodes
       this.selectedCountryCodes = this.projects
-        .filter(p => this.selectedCountries.includes(p.country))
-        .map(p => p.country_code);
-      
+        .filter((p) => this.selectedCountries.includes(p.country))
+        .map((p) => p.country_code);
+
       // Update recent selections
-      this.recentSelections.countries = [countryName, ...this.recentSelections.countries.filter(c => c !== countryName)];
-      
+      this.recentSelections.countries = [
+        countryName,
+        ...this.recentSelections.countries.filter((c) => c !== countryName),
+      ];
+
       // Apply the filter to update the project list
       this.applyFilter();
     },
@@ -199,9 +226,10 @@ export default {
 
       const { selectedCountry, selectedTopic } = filters;
 
-      this.filteredProjects = this.projects.filter(p => {
+      this.filteredProjects = this.projects.filter((p) => {
         return (
-          (selectedCountry.length === 0 || selectedCountry.includes(p.country)) &&
+          (selectedCountry.length === 0 ||
+            selectedCountry.includes(p.country)) &&
           (selectedTopic.length === 0 || selectedTopic.includes(p.topic))
         );
       });
@@ -214,16 +242,22 @@ export default {
       const getScore = (project) => {
         let score = 0;
         if (this.recentSelections.countries.includes(project.country)) {
-          score += this.recentSelections.countries.length - this.recentSelections.countries.indexOf(project.country);
+          score +=
+            this.recentSelections.countries.length -
+            this.recentSelections.countries.indexOf(project.country);
         }
         if (this.recentSelections.topics.includes(project.topic)) {
-          score += this.recentSelections.topics.length - this.recentSelections.topics.indexOf(project.topic);
+          score +=
+            this.recentSelections.topics.length -
+            this.recentSelections.topics.indexOf(project.topic);
         }
         return score;
       };
 
       // Sort the filtered projects based on the scoring system
-      this.prioritizedProjects = [...this.filteredProjects].sort((a, b) => getScore(b) - getScore(a));
+      this.prioritizedProjects = [...this.filteredProjects].sort(
+        (a, b) => getScore(b) - getScore(a)
+      );
     },
     resetFilters() {
       this.$refs.projectFilters.selectedCountry = [];
@@ -243,10 +277,12 @@ export default {
   },
   watch: {
     filteredProjects() {
-      this.selectedCountryCodes = [...new Set(this.filteredProjects.map(p => p.country_code))];
+      this.selectedCountryCodes = [
+        ...new Set(this.filteredProjects.map((p) => p.country_code)),
+      ];
       this.prioritizeProjects();
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -292,5 +328,16 @@ export default {
 
 .no-results-message p {
   margin-bottom: 10px;
+}
+
+.footer-iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.iframe-image {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }
 </style>
