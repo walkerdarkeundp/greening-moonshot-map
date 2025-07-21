@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref, watch, onMounted, defineComponent } from 'vue';
+import { ref, watch, onMounted, onUnmounted, defineComponent } from 'vue';
 import { LMap, LTileLayer } from 'vue3-leaflet';
 import L from 'leaflet';
 
@@ -40,6 +40,76 @@ export default defineComponent({
       const ratio = funding / maxFunding;
       const lightness = 60 - (5 * ratio);
       return `hsl(0, 0%, ${lightness}%)`;
+    };
+
+
+    let popup = L.popup();
+
+    function pointInPolygon(latlng, layer) {
+      // Handles both MultiPolygon and Polygon
+      const lat = latlng.lat;
+      const lng = latlng.lng;
+      const latlngs = layer.getLatLngs();
+      // latlngs can be [ [ [latlng, ...], ... ] ] for MultiPolygon or [ [latlng, ...] ] for Polygon
+      function inside(poly) {
+        let inside = false;
+        for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+          const xi = poly[i].lat, yi = poly[i].lng;
+          const xj = poly[j].lat, yj = poly[j].lng;
+          const intersect = ((yi > lng) !== (yj > lng)) && (lat < (xj - xi) * (lng - yi) / (yj - yi + 0.0000001) + xi);
+          if (intersect) inside = !inside;
+        }
+        return inside;
+      }
+      if (Array.isArray(latlngs[0][0])) {
+        // MultiPolygon
+        return latlngs.some(polyGroup => polyGroup.some(poly => inside(poly)));
+      } else {
+        // Polygon
+        return latlngs.some(poly => inside(poly));
+      }
+    }
+
+    function onMapClick(e) {
+      if (!mapRef.value || !mapRef.value.$data || !mapRef.value.$data.map) {
+        console.error("Map container is not yet available");
+        return;
+      }
+     // const leafletMap = mapRef.value.$data.map;
+      const latlng = e.latlng;
+      let clickedCountry = null;
+
+      geoLayer.eachLayer((layer) => {
+        // Use point-in-polygon instead of bounds
+        if (pointInPolygon(latlng, layer)) {
+          const countryCode = layer.feature.properties.ISO_A2;
+          const countryName = layer.feature.properties.ADMIN;
+          const countryContinent = layer.feature.properties.CONTINENT;
+          console.log('Clicked country:', countryCode, countryName, countryContinent);
+          clickedCountry = { countryCode, countryName, countryContinent };
+        }
+      });
+      const clickedProject = clickedCountry ? props.projects.find(project => project.country === clickedCountry.countryName) : null;
+
+  popup
+    .setLatLng(latlng)
+    .setContent(
+      clickedCountry
+        ? `Region: ${clickedProject ? clickedProject.region : clickedCountry.countryContinent} <br>
+        Country: ${clickedCountry.countryName}`
+        : `You clicked the map at ${latlng.toString()}`
+    )
+    .openOn(mapRef.value.$data.map);
+}
+
+
+    const onCountryClick = (e) => {
+      const layer = e.target;
+      const countryCode = layer.feature.properties.ISO_A2;
+      if (countriesWithProjects.has(countryCode)) {
+        const countryName = layer.feature.properties.ADMIN;
+        emit('country-selected', { countryCode, countryName });
+      }
     };
 
     const updateCountryStyle = (layer, countryCode) => {
@@ -69,51 +139,8 @@ export default defineComponent({
       }
     };
 
-    let popup = L.popup();
-
-    function onMapClick(e) {
-  if (!mapRef.value) {
-    console.error("Map container is not yet available");
-    return;
-  }
-
-  const latlng = e.latlng;
-  let clickedCountry = null;
-
-      geoLayer.eachLayer((layer) => {
-    const layerBounds = layer.getBounds();
-    if (layerBounds.contains(latlng)) {
-      const countryCode = layer.feature.properties.ISO_A2;
-      const countryName = layer.feature.properties.ADMIN;
-      const countryContinent = layer.feature.properties.CONTINENT;
-      clickedCountry = { countryCode, countryName, countryContinent };
-    }
-  });
-      const clickedProject = clickedCountry ? props.projects.find(project => project.country === clickedCountry.countryName) : null;
-
-  popup
-    .setLatLng(latlng)
-    .setContent(
-      clickedCountry
-        ? `Region: ${clickedProject ? clickedProject.region : clickedCountry.countryContinent} <br>
-        Country: ${clickedCountry.countryName}`
-        : `You clicked the map at ${latlng.toString()}`
-    )
-    .openOn(mapRef.value.$data.map);
-}
-
-
-    const onCountryClick = (e) => {
-      const layer = e.target;
-      const countryCode = layer.feature.properties.ISO_A2;
-      if (countriesWithProjects.has(countryCode)) {
-        const countryName = layer.feature.properties.ADMIN;
-        emit('country-selected', { countryCode, countryName });
-      }
-    };
-
     onMounted(async () => {
-      if (!mapRef.value) {
+      if (!mapRef.value || !mapRef.value.$data || !mapRef.value.$data.map) {
         console.error("Map container is not yet available");
         return;
       }
@@ -149,7 +176,6 @@ export default defineComponent({
                 onCountryClick(e);
                 onMapClick(e, layer)
               }
-              
             });
           }
         }
@@ -165,6 +191,12 @@ export default defineComponent({
     watch(() => props.resetSelection, (newValue) => {
       if (newValue) {
         clearSelection();
+      }
+    });
+
+    onUnmounted(() => {
+      if (mapRef.value && mapRef.value.$data && mapRef.value.$data.map) {
+        mapRef.value.$data.map.removeLayer(geoLayer);
       }
     });
 

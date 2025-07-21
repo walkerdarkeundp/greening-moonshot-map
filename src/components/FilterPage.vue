@@ -224,6 +224,8 @@ export default {
 
       // Sort the filtered projects based on the scoring system
       this.prioritizedProjects = [...this.filteredProjects].sort((a, b) => getScore(b) - getScore(a));
+      // Log the raw prioritizedProjects array
+      console.log('Prioritized Projects (raw):', JSON.parse(JSON.stringify(this.prioritizedProjects)));
     },
     resetFilters() {
       this.$refs.projectFilters.selectedCountry = [];
