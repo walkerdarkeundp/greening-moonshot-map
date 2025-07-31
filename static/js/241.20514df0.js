@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[241],{2241:function(p,a,e){p.exports=e.p+"static/img/Uzbekistan.ea2d2def.png"}}]);

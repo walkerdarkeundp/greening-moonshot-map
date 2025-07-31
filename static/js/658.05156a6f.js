@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[658],{2658:function(p,a,c){p.exports=c.p+"static/img/Morocco.6685a076.jpeg"}}]);

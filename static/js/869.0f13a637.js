@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[869],{1869:function(p,a,s){p.exports=s.p+"static/img/Tajikistan.76cdf94c.jpg"}}]);

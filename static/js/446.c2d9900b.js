@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[446],{446:function(p,a,e){p.exports=e.p+"static/img/Jordan.a1689375.jpeg"}}]);

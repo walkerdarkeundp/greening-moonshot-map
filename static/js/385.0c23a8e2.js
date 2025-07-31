@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[385],{9385:function(p,a,s){p.exports=s.p+"static/img/Afghanistan.c0f20d3f.jpg"}}]);

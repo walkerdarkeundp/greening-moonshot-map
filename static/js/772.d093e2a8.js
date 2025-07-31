@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[772],{6772:function(p,a,e){p.exports=e.p+"static/img/Malawi.154d082e.jpg"}}]);

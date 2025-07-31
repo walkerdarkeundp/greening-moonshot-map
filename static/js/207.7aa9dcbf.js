@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[207],{3207:function(p,a,e){p.exports=e.p+"static/img/Syria.98eff878.jpg"}}]);
