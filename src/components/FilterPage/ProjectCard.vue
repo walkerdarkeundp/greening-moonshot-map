@@ -15,12 +15,12 @@
         </p>
         <p>
           <strong>Story:</strong>
-          <a :href="project.story || ''" class="story-link"
+          <a style="padding-left: 10px;" target="_blank" :href="project.story || ''" class="story-link"
             >Read the full story</a
           >
         </p>
         <div class="image-container">
-          <a :href="project.story || ''" class="img-to-story-link">
+          <a target="_blank"  :href="project.story || ''" class="img-to-story-link">
             <img
               class="card-image"
               :src="currentImgSrc"
