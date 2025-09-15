@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[987],{9987:function(p,a,s){p.exports=s.p+"static/img/Bosnia.d62af14a.jpg"}}]);

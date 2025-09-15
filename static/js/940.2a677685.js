@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[940],{4940:function(p,a,s){p.exports=s.p+"static/img/Mauritania.37914af4.jpg"}}]);

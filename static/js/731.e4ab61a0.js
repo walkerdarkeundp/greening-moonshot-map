@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[731],{5731:function(p,a,s){p.exports=s.p+"static/img/Moldova.8ab668dc.jpg"}}]);

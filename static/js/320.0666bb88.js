@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkmap_app"]=self["webpackChunkmap_app"]||[]).push([[320],{9320:function(p,a,s){p.exports=s.p+"static/img/Burundi.37d96958.jpg"}}]);
