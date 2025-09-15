@@ -12,29 +12,32 @@
         @change="onCountryChange"
       ></v-select>
     </v-expansion-panel>
-    
-    <!-- Topic Filter -->
+
+    <!-- Regions Filter -->
     <v-expansion-panel hide-actions>
       <v-select
-        v-model="selectedTopic"
-        :items="topicList"
-        label="Topics"
+        v-model="selectedRegion"
+        :items="sortedRegionList"
+        label="Regions"
         multiple
         @focus="isAnyDropdownOpen = true"
         @blur="isAnyDropdownOpen = false"
-        @change="onTopicChange"
+        @change="onRegionChange"
       ></v-select>
     </v-expansion-panel>
+
+    
   </v-expansion-panels>
 </template>
 
 <script>
 export default {
-  props: ['projects', 'selectedCountries'],
+  props: ["projects", "selectedCountries", "selectedRegions"],
   data() {
     return {
       selectedTopic: [],
       countryList: [],
+      regionList: [],
       topicList: [],
       isAnyDropdownOpen: false,
     };
@@ -45,12 +48,23 @@ export default {
         return this.selectedCountries;
       },
       set(value) {
-        this.$emit('update:selectedCountries', value);
-      }
+        this.$emit("update:selectedCountries", value);
+      },
+    },
+    selectedRegion: {
+      get() {
+        return this.selectedRegions;
+      },
+      set(value) {
+        this.$emit("update:selectedRegions", value);
+      },
     },
     sortedCountryList() {
       return [...this.countryList].sort((a, b) => a.localeCompare(b));
-    }
+    },
+    sortedRegionList() {
+      return [...this.regionList].sort((a, b) => a.localeCompare(b));
+    },
   },
   methods: {
     keepDropdownOpen() {
@@ -60,19 +74,30 @@ export default {
       this.isAnyDropdownOpen = false;
     },
     updateFilterLists() {
-      this.countryList = [...new Set(this.projects.map(project => project.country))];
-      this.topicList = [...new Set(this.projects.map(project => project.topic))];
+      this.countryList = [
+        ...new Set(this.projects.map((project) => project.country)),
+      ];
+      this.regionList = [
+        ...new Set(this.projects.map((project) => project.continent)),
+      ];
+      this.topicList = [
+        ...new Set(this.projects.map((project) => project.topic)),
+      ];
     },
     filterProjects() {
-      this.$emit('filter');
+      this.$emit("filter");
     },
     onCountryChange(value) {
       this.keepDropdownOpen();
-      this.$emit('update:selectedCountries', value);
+      this.$emit("update:selectedCountries", value);
+    },
+    onRegionChange(value) {
+      this.keepDropdownOpen();
+      this.$emit("update:selectedRegions", value);
     },
     onTopicChange(value) {
       this.keepDropdownOpen();
-      this.$emit('update:selectedTopic', value);
+      this.$emit("update:selectedTopic", value);
     },
   },
   watch: {
@@ -82,9 +107,12 @@ export default {
         if (newVal && newVal.length) {
           this.updateFilterLists();
         }
-      }
+      },
     },
     selectedCountry() {
+      this.filterProjects();
+    },
+    selectedRegion() {
       this.filterProjects();
     },
     selectedTopic() {

@@ -6,14 +6,28 @@
       </div>
       <div class="card-details">
         <h3>{{ project.title || "No title available" }}</h3>
-        <p><strong>Region:</strong> {{ project.region || "No region available" }}</p>
-        <p><strong>Country:</strong> {{ project.country || "No country available" }}</p>
-        <p
-          ><strong>Story:</strong>
-          <a :href="project.story || ''" class="story-link">{{ project.story || "No country available" }}</a></p
-        >
+        <p>
+          <strong>Region:</strong> {{ project.region || "No region available" }}
+        </p>
+        <p>
+          <strong>Country:</strong>
+          {{ project.country || "No country available" }}
+        </p>
+        <p>
+          <strong>Story:</strong>
+          <a :href="project.story || ''" class="story-link"
+            >Read the full story</a
+          >
+        </p>
         <div class="image-container">
-          <img class="card-image" :src="currentImgSrc" :alt="project.country" @error="handleImageError" />
+          <a :href="project.story || ''" class="img-to-story-link">
+            <img
+              class="card-image"
+              :src="currentImgSrc"
+              :alt="project.country"
+              @error="handleImageError"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -47,7 +61,9 @@ export default {
     async tryLoadCountryImage() {
       for (const ext of this.possibleExtensions) {
         try {
-          const countryImage = await import(`@/assets/images/${this.project.country}.${ext}`);
+          const countryImage = await import(
+            `@/assets/images/${this.project.country}.${ext}`
+          );
           return countryImage.default;
         } catch (e) {
           continue;

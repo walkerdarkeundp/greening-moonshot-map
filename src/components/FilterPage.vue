@@ -16,8 +16,10 @@
             ref="projectFilters"
             :projects="projects"
             :selectedCountries="selectedCountries"
+            :selectedRegions="selectedRegions"
             @filter="applyFilter"
             @update:selectedCountries="updateSelectedCountries"
+            @update:selectedRegions="updateSelectedRegions"
             @update:selectedTopic="updateSelectedTopics"
             class="filters"
           />
@@ -61,9 +63,11 @@ export default {
       loading: true,
       selectedCountryCodes: [],
       selectedCountries: [],
+      selectedRegions: [],
       resetMapSelection: false,
       recentSelections: {
         countries: [],
+        regions: [],
         topics: [],
       },
     };
@@ -108,6 +112,7 @@ export default {
             )
           );
 
+
           return normalizedData;
         })
         .then(jsonData => {
@@ -120,18 +125,24 @@ export default {
             })
             .then(countryCodes => {
               const countryCodeMap = new Map();
+              const countryRegionMap = new Map();
+              
               Object.keys(countryCodes).forEach(region => {
                 const countries = countryCodes[region];
                 Object.keys(countries).forEach(countryName => {
                   countryCodeMap.set(countryName.trim(), countries[countryName].country_code);
+                  countryRegionMap.set(countryName.trim(), region);
                 });
               });
 
-              // Додаємо country_code до jsonData
+              // Додаємо country_code та continent до jsonData
               const enrichedData = jsonData.map(row => ({
                 ...row,
                 id: uuidv4(),
                 country_code: countryCodeMap.get(row.country.trim()) || 'Unknown',
+                // Use Region field from Excel (capital R)
+                continent: row.Region || row.region || row.continent || 
+                          countryRegionMap.get(row.country.trim()) || 'Unknown',
               }));
 
               return enrichedData;
@@ -158,10 +169,15 @@ export default {
       this.selectedCountries = countries;
       this.selectedCountryCodes = this.projects
         .filter(p => {
-          return countries.includes(p.country)
+          return Array.isArray(countries) && countries.includes(p.country)
         })
       .map(p => p.country_code);
       this.recentSelections.countries = countries;
+      this.applyFilter();
+    },
+    updateSelectedRegions(regions) {
+      this.selectedRegions = regions;
+      this.recentSelections.regions = regions;
       this.applyFilter();
     },
     updateSelectedTopics(topics) {
@@ -184,7 +200,7 @@ export default {
       
       // Update selectedCountryCodes
       this.selectedCountryCodes = this.projects
-        .filter(p => this.selectedCountries.includes(p.country))
+        .filter(p => Array.isArray(this.selectedCountries) && this.selectedCountries.includes(p.country))
         .map(p => p.country_code);
       
       // Update recent selections
@@ -197,12 +213,13 @@ export default {
       const filters = this.$refs.projectFilters;
       if (!filters) return;
 
-      const { selectedCountry, selectedTopic } = filters;
+      const { selectedCountry, selectedRegion, selectedTopic } = filters;
 
       this.filteredProjects = this.projects.filter(p => {
         return (
-          (selectedCountry.length === 0 || selectedCountry.includes(p.country)) &&
-          (selectedTopic.length === 0 || selectedTopic.includes(p.topic))
+          (Array.isArray(selectedCountry) && selectedCountry.length === 0 || Array.isArray(selectedCountry) && selectedCountry.includes(p.country)) &&
+          (Array.isArray(selectedRegion) && selectedRegion.length === 0 || Array.isArray(selectedRegion) && selectedRegion.includes(p.continent)) &&
+          (Array.isArray(selectedTopic) && selectedTopic.length === 0 || Array.isArray(selectedTopic) && selectedTopic.includes(p.topic))
         );
       });
 
@@ -213,10 +230,13 @@ export default {
       // Create a scoring system based on recent selections
       const getScore = (project) => {
         let score = 0;
-        if (this.recentSelections.countries.includes(project.country)) {
+        if (Array.isArray(this.recentSelections.countries) && this.recentSelections.countries.includes(project.country)) {
           score += this.recentSelections.countries.length - this.recentSelections.countries.indexOf(project.country);
         }
-        if (this.recentSelections.topics.includes(project.topic)) {
+        if (Array.isArray(this.recentSelections.regions) && this.recentSelections.regions.includes(project.continent)) {
+          score += this.recentSelections.regions.length - this.recentSelections.regions.indexOf(project.continent);
+        }
+        if (Array.isArray(this.recentSelections.topics) && this.recentSelections.topics.includes(project.topic)) {
           score += this.recentSelections.topics.length - this.recentSelections.topics.indexOf(project.topic);
         }
         return score;
@@ -229,11 +249,14 @@ export default {
     },
     resetFilters() {
       this.$refs.projectFilters.selectedCountry = [];
+      this.$refs.projectFilters.selectedRegion = [];
       this.$refs.projectFilters.selectedTopic = [];
       this.selectedCountries = [];
+      this.selectedRegions = [];
       this.selectedCountryCodes = [];
       this.recentSelections = {
         countries: [],
+        regions: [],
         topics: [],
       };
       this.applyFilter();

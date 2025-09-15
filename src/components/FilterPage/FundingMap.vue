@@ -113,7 +113,7 @@ export default defineComponent({
     };
 
     const updateCountryStyle = (layer, countryCode) => {
-      if (props.selectedCountryCodes.includes(countryCode)) {
+      if (Array.isArray(props.selectedCountryCodes) && props.selectedCountryCodes.includes(countryCode)) {
         layer.setStyle({
           fillColor: 'green',
           weight: 1,
